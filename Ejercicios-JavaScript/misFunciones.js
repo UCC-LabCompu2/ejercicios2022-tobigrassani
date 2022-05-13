@@ -41,3 +41,10 @@ function convertirGR(id){
     }
     document.getElementById("grados").value = grad;
 }
+function mostrar_ocultar(valorMostrar){
+    if(valorMostrar=="val_mostrar"){
+        document.getElementById("divMostrar").style.display = 'block';
+    }else if(valorMostrar=="val_ocultar"){
+        document.getElementById("divMostrar").style.display = 'none';
+    }
+}
