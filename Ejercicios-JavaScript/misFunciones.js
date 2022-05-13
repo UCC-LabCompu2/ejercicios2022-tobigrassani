@@ -48,3 +48,27 @@ function mostrar_ocultar(valorMostrar){
         document.getElementById("divMostrar").style.display = 'none';
     }
 }
+function cSuma() {
+    var num1, num2;
+    num1=number(document.getElementById("sum_num1")[0].value);
+    num2=number(document.getElementById("sum_num2")[0].value);
+    document.getElementById("sum_total")[0].value = nums1 + nums2;
+}
+function cResta() {
+    var num1, num2;
+    num1=number(document.getElementById("res_num1")[0].value);
+    num2=number(document.getElementById("res_num2")[0].value);
+    document.getElementById("res_total")[0].value = num1 - num2;
+}
+function cMul() {
+    var num1, num2;
+    num1=number(document.getElementById("mul_num1")[0].value);
+    num2=number(document.getElementById("mul_num2")[0].value);
+    document.getElementById("mul_total")[0].value = num1 * num2;
+}
+function cDiv() {
+    var num1, num2;
+    num1=number(document.getElementById("div_num1")[0].value);
+    num2=number(document.getElementById("div_num2")[0].value);
+    document.getElementById("div_total")[0].value = num1 / num2;
+}
