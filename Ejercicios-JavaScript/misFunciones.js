@@ -3,7 +3,7 @@
  * @method cambiarUnidades
  * @param {string} id - El id de los inputs de metros, yardas, pies, pulgadas.
  * @param {number} valor - El valor de los inputs de metros, yardas, pies o pulgadas
- * @return
+* @return
  */
 function conversorUnidades(id, valor){
     var metro, pulgada, pie, yarda;
@@ -61,27 +61,27 @@ function mostrar_ocultar(valorMostrar){
         document.getElementById("divMostrar").style.display = 'none';
     }
 }
-function cSuma() {
+function calcularSuma() {
     var num1, num2;
-    num1=number(document.getElementById("sum_num1")[0].value);
-    num2=number(document.getElementById("sum_num2")[0].value);
-    document.getElementById("sum_total")[0].value = nums1 + nums2;
+    num1=document.getElementsByName("sum_num1")[0].value;
+    num2=document.getElementsByName("sum_num2")[0].value;
+    document.getElementsByName("sum_total")[0].value = Number(num1) + Number(num2);
 }
-function cResta() {
+function calcularResta() {
     var num1, num2;
-    num1=number(document.getElementById("res_num1")[0].value);
-    num2=number(document.getElementById("res_num2")[0].value);
-    document.getElementById("res_total")[0].value = num1 - num2;
+    num1=document.getElementsByName("res_num1")[0].value;
+    num2=document.getElementsByName("res_num2")[0].value;
+    document.getElementsByName("res_total")[0].value = Number(num1) - Number(num2);
 }
-function cMul() {
+function calcularMultiplicacion() {
     var num1, num2;
-    num1=number(document.getElementById("mul_num1")[0].value);
-    num2=number(document.getElementById("mul_num2")[0].value);
-    document.getElementById("mul_total")[0].value = num1 * num2;
+    num1=document.getElementsByName("mul_num1")[0].value;
+    num2=document.getElementsByName("mul_num2")[0].value;
+    document.getElementsByName("mul_total")[0].value = Number(num1) * Number(num2);
 }
-function cDiv() {
+function calcularDivision() {
     var num1, num2;
-    num1=number(document.getElementById("div_num1")[0].value);
-    num2=number(document.getElementById("div_num2")[0].value);
-    document.getElementById("div_total")[0].value = num1 / num2;
+    num1=document.getElementsByName("div_num1")[0].value;
+    num2=document.getElementsByName("div_num2")[0].value;
+    document.getElementsByName("div_total")[0].value = Number(num1) / Number(num2);
 }
