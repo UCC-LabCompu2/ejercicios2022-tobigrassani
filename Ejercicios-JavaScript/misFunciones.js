@@ -16,22 +16,22 @@ function conversorUnidades(id, valor){
         pulgada = "";
         pie = "";
         yarda = "";
-    }else if(id=="metro") {
+    }else if(id==="metro") {
         metro = valor;
         pulgada = 39.3701 * valor;
         pie = 3.28084 * valor;
         yarda= 1.09361 * valor;
-    }else if(id=="pulgada") {
+    }else if(id==="pulgada") {
         pulgada = valor;
         metro = 0.0254 * valor;
         pie = 0.0833333 * valor;
         yarda = 0.0277778 * valor;
-    }else if(id=="pie") {
+    }else if(id==="pie") {
         pie = valor;
         metro = 0.3048*valor;
         pulgada = 12*valor;
         yarda = 0.333333*valor;
-    }else if(id=="yarda") {
+    }else if(id==="yarda") {
         yarda = valor;
         metro = 0.9144 * valor;
         pulgada = 36 * valor;
@@ -45,19 +45,19 @@ function conversorUnidades(id, valor){
 }
 function convertirGR(id){
     var grad, rad;
-    if(id=="grados"){
+    if(id==="grados"){
     grad = document.getElementById("grados").value;
     rad = (grad*Math.PI)/180;
     document.getElementById("radianes").value = rad;
-    }else if(id=="radianes"){
+    }else if(id==="radianes"){
     rad = document.getElementById("radianes").value;
     grad = (rad*180)/Math.PI;
     document.getElementById("grados").value = grad;
 } }
 function mostrar_ocultar(valorMostrar){
-    if(valorMostrar=="val_mostrar"){
+    if(valorMostrar==="val_mostrar"){
         document.getElementById("divMostrar").style.display = 'block';
-    }else if(valorMostrar=="val_ocultar"){
+    }else if(valorMostrar==="val_ocultar"){
         document.getElementById("divMostrar").style.display = 'none';
     }
 }
@@ -112,4 +112,11 @@ function cargarLocalStorage(){
     cant = localStorage.getItem("distanciaLS");
     un = localStorage.getItem("unidadesLS");
     document.getElementById("dist").value = cant + " " + un;
+}
+function dibujarCirCuadd(){
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var yMax = canvas.height;
+    ctx.fillStyle = "RED";
+    ctx.fillRect( 5,yMax-45, 40,40 );
 }
