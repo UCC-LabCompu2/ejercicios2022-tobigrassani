@@ -125,3 +125,13 @@ function dibujarCirCuadd(){
     ctx.fillStyle = "BLUE";
     ctx.fill();
 }
+function dibujar(event){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var posX = event.clientX;
+    var posY = event.clientY;
+    console.log(posX, posY);
+
+    ctx.fillRect(posX,posY,3,3);
+    ctx.fill;
+}
