@@ -181,5 +181,15 @@ function dibujarCuadriculado() {
     ctx.strokeStyle = "RED";
     ctx.stroke();
     ctx.closePath();
-
+}
+function dibujarImagen(posX,posY){
+    canvas = document.getElementById("myCanvas");
+    ctx = canvas.getContext("2d");
+    console.log(posX,posY);
+    var img = new Image();
+    img.src = "images/auto.png";
+    canvas.width=canvas.width;
+    img.onload = function (){
+        ctx.drawImage(img,posX,posY);
+    }
 }
