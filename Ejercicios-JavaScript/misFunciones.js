@@ -117,6 +117,11 @@ function dibujarCirCuadd(){
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var yMax = canvas.height;
+    var xMax = canvas.width;
     ctx.fillStyle = "RED";
     ctx.fillRect( 5,yMax-45, 40,40 );
+    ctx.arc(xMax/2,yMax/2,20,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "BLUE";
+    ctx.fill();
 }
