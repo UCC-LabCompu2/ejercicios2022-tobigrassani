@@ -32,6 +32,40 @@
         }
     };
 
+    var barra = {
+        ancho: 75,
+        alto:10,
+        posX: (canvas.width-75)/2,
+        dibujar: function (){
+            ctx.beginPath();
+            ctx.fillRect(this.posX, 310, this.ancho, this.alto);
+            ctx.fillStyle = "#004123"
+            ctx.fill();
+            ctx.closePath();
+        }
+    };
+
+    var derPresionado = false;
+    var izqPresionado = false;
+
+    document.addEventListener("keydown",KeyDownHandler, false);
+    document.addEventListener("keyup",KeyUpHandler, false);
+
+    function KeyDownHandler (e) {
+        if(e.keyCode === 39) {
+            derPresionado = true;
+        }else if(e.keyCode === 37) {
+            izqPresionado = true;
+        }
+    }
+    function KeyUpHandler (e) {
+        if(e.keyCode === 39) {
+            derPresionado = false;
+        }else if(e.keyCode === 37) {
+            izqPresionado = false;
+        }
+    }
+
     function dibujar(){
         canvas.width = canvas.width;
         //Rebotar izquierda o derecha
@@ -42,7 +76,17 @@
         if (y+dy<10 || y+dy>canvas.height-10){
             dy=-dy;
         }
+
+        //Mover barra Derecha o Izquierda
+        if(derPresionado && barra.posX < canvas.width - 75){
+            barra.posX+=7;
+        }else if (izqPresionado && barra.posX > 0){
+            barra.posX-=7;
+        }
+
         pelota.dibujar();
+        barra.dibujar();
+
         x += dx;
         y += dy;
     }
