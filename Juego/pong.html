@@ -17,15 +17,15 @@
 <script>
     var canvas = document.getElementById("pongCanvas");
     var ctx = canvas.getContext("2d");
-    var x = canvas.width;
+    var x = canvas.width-10;
     var y = canvas.height-10;
-    var dx = 1;
-    var dy = -1;
+    var dx = 2;
+    var dy = -2;
     var pelota = {
         radio: 10,
         dibujar: function () {
             ctx.beginPath();
-            ctx.arc(x/2, y, this.radio, 0, 2*Math.PI);
+            ctx.arc(x, y, this.radio, 0, 2*Math.PI);
             ctx.fillStyle = "tomato";
             ctx.fill();
             ctx.closePath();
@@ -34,6 +34,14 @@
 
     function dibujar(){
         canvas.width = canvas.width;
+        //Rebotar izquierda o derecha
+        if (x+dx<10 || x+dx>canvas.width){
+            dx=-dx;
+        }
+        //Rebotar arriba o abajo
+        if (y+dy<10 || y+dy>canvas.height-10){
+            dy=-dy;
+        }
         pelota.dibujar();
         x += dx;
         y += dy;
