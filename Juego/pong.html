@@ -69,12 +69,20 @@
     function dibujar(){
         canvas.width = canvas.width;
         //Rebotar izquierda o derecha
-        if (x+dx<10 || x+dx>canvas.width){
+        if (x+dx<pelota.radio || x+dx>canvas.width-pelota.radio){
             dx=-dx;
         }
         //Rebotar arriba o abajo
-        if (y+dy<10 || y+dy>canvas.height-10){
+        if (y+dy<0) {
             dy=-dy;
+        }
+
+        if(y+dy>canvas.height-pelota.radio){
+            if(x>barra.posX && x<barra.ancho+barra.posX){
+                dy=-dy;
+            } else{
+                alert("GAME OVER");
+            }
         }
 
         //Mover barra Derecha o Izquierda
@@ -90,7 +98,7 @@
         x += dx;
         y += dy;
     }
-    setInterval(dibujar,1);
+    setInterval(dibujar,10);
 
 </script>
 </html>
