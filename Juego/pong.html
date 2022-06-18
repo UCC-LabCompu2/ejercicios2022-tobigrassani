@@ -14,4 +14,22 @@
 </canvas>
 
 </body>
+<script>
+    var canvas = document.getElementById("pongCanvas");
+    var ctx = canvas.getContext("2d");
+    var x = canvas.width;
+    var y = canvas.height;
+    var pelota = {
+        radio: 10,
+        dibujar: function () {
+            ctx.beginPath();
+            ctx.arc(x/2, y/2, this.radio, 0, 2*Math.PI);
+            ctx.fillStyle = "tomato";
+            ctx.fill();
+            ctx.closePath();
+        }
+    };
+    pelota.dibujar();
+
+</script>
 </html>
